@@ -1,0 +1,22 @@
+{
+  "name": "jstest1",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kiko123cd/JsTest1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kiko123cd/JsTest1/issues"
+  },
+  "homepage": "https://github.com/Kiko123cd/JsTest1#readme",
+  "devDependencies": {
+    "jest": "^29.4.0"
+  }
+}
