@@ -7,7 +7,12 @@ test('adds 1 + 2 to equal 3', () => {
 test('const test',() => {
   const bookTitle = "book";
   const bookPrice = 3000;
-  bookTitle = "まんが"
+
   expect(bookTitle).toBe("book");
   expect(bookPrice).toBe(3000);
+})
+
+test('べき乗 test',() => {
+  expect(3 ** 4).toBe(81);
+  expect(Math.pow(2,4)).toBe(16);
 })
