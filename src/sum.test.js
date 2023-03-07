@@ -16,3 +16,8 @@ test('べき乗 test',() => {
   expect(3 ** 4).toBe(81);
   expect(Math.pow(2,4)).toBe(16);
 })
+
+test(' test',() => {
+  expect().toBe();
+  expect().toBe();
+})
