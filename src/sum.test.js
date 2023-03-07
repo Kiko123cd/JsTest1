@@ -18,3 +18,16 @@ test('べき乗 test',() => {
 })
 
 
+function addPrefix(text, prefix) {
+  // `prefix`が指定されていない場合は"デフォルト:"を付ける
+  const pre = typeof prefix === "string" ? prefix : "デフォルト:";
+  return pre + text;
+}
+
+test('三項演算子test',() => {
+  expect(typeof "文字列").toBe("string");
+  expect(typeof undefined).toBe("undefined");
+  expect(addPrefix ("abc")).toBe("デフォルト:abc");
+  console.log(addPrefix("文字列"));
+})
+
