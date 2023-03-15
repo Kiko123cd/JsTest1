@@ -17,6 +17,7 @@ test('べき乗 test',() => {
   expect(Math.pow(2,4)).toBe(16);
 })
 
+
 function addPrefix(text, prefix) {
   // `prefix`が指定されていない場合は"デフォルト:"を付ける
   const pre = typeof prefix === "string" ? prefix : "デフォルト:";
