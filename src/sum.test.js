@@ -63,3 +63,16 @@ test('デフォルト引数の練習',()=>{
   expect(addPrefix2 ("abc")).toBe("デフォルト:abc");
   expect(addPrefix2 ("abc","d")).toBe("dabc");
 })
+
+test('function and Arrow function test',() => {
+  
+  const a = function (x){
+    return x*x;
+  }
+  const b = (x)=>{
+    return x*x;
+  }
+  const c = x =>x*x;
+  expect(a(2)).toBe(4);
+  expect(b(2)).toBe(4);
+})
