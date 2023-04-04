@@ -42,3 +42,15 @@ test('Number.parseFloat,Number.parseInt test',() => {
   expect(Number.parseInt("AAA",10)).toBe(NaN);
   expect(Number.isNaN(Number.parseInt("AAA",10))).toBe(true);
 })
+test('function and Arrow function test',() => {
+  
+  const a = function (x){
+    return x*x;
+  }
+  const b = (x)=>{
+    return x*x;
+  }
+  const c = x =>x*x;
+  expect(a(2)).toBe(4);
+  expect(b(2)).toBe(4);
+})
