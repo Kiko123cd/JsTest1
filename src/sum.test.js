@@ -42,6 +42,28 @@ test('Number.parseFloat,Number.parseInt test',() => {
   expect(Number.parseInt("AAA",10)).toBe(NaN);
   expect(Number.isNaN(Number.parseInt("AAA",10))).toBe(true);
 })
+
+test('function test',()=>{
+  function double(num){
+    return num*2;
+  }
+  expect(double(10)).toBe(20);
+  function echo(x){
+    return x;
+  }
+  expect(echo(1)).toBe(1);
+  expect(echo()).toBe(undefined);
+})
+test('デフォルト引数の練習',()=>{
+  function addPrefix2(text, prefix="デフォルト:") {
+    // `prefix`が指定されていない場合は"デフォルト:"を付ける
+    // const pre = typeof prefix === "string" ? prefix : "デフォルト:";
+    return prefix + text;
+  }
+  expect(addPrefix2 ("abc")).toBe("デフォルト:abc");
+  expect(addPrefix2 ("abc","d")).toBe("dabc");
+})
+
 test('function and Arrow function test',() => {
   
   const a = function (x){
