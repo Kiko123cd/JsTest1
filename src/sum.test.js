@@ -63,16 +63,19 @@ test('デフォルト引数の練習',()=>{
   expect(addPrefix2 ("abc")).toBe("デフォルト:abc");
   expect(addPrefix2 ("abc","d")).toBe("dabc");
 })
-
-test('function and Arrow function test',() => {
-  
-  const a = function (x){
-    return x*x;
+test('if/elseif test',()=>{
+  const ver = function(version){
+    if (version === "ES5") {
+      return "ECMAScript 5";
+    } else if (version === "ES6") {
+      return "ECMAScript 2015";
+    } else if (version === "ES7") {
+      return "ECMAScript 2016";
+    }
+    return "unknown";
   }
-  const b = (x)=>{
-    return x*x;
-  }
-  const c = x =>x*x;
-  expect(a(2)).toBe(4);
-  expect(b(2)).toBe(4);
+  expect(ver("ES5")).toBe("ECMAScript 5");
+  expect(ver("ES6")).toBe("ECMAScript 2015");
+  expect(ver("ES7")).toBe("ECMAScript 2016");
+  expect(ver(3)).toBe("unknown");
 })
