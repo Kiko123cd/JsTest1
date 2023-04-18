@@ -79,3 +79,77 @@ test('if/elseif test',()=>{
   expect(ver("ES7")).toBe("ECMAScript 2016");
   expect(ver(3)).toBe("unknown");
 })
+test('else test',()=>{
+  const UruToshi = function(year){
+  if (year % 4 === 0) { // 4で割り切れる
+      if (year % 100 === 0) { // 100で割り切れる
+          if (year % 400 === 0) { // 400で割り切れる
+              return true;
+          } else {
+             return false;
+          }
+      } else {
+        return true;
+      }
+  } else {
+    return false;
+  }
+}
+  expect(UruToshi(2000)).toBe(true);
+  expect(UruToshi(2020)).toBe(true);
+  expect(UruToshi(2014)).toBe(false);
+})
+test('else2 test',()=>{
+  const UruToshi = function(year){
+    if (year % 400 === 0) { // 400で割り切れる
+      return true;
+    } else if (year % 100 === 0) { // 100で割り切れる
+      return false;
+    } else if (year % 4 === 0) { // 4で割り切れる
+      return true;
+    } else { // それ以外
+      return false;
+    }
+  }
+  expect(UruToshi(2000)).toBe(true);
+  expect(UruToshi(2020)).toBe(true);
+  expect(UruToshi(2014)).toBe(false);
+})
+test('Switch test',()=>{
+  const ver = function(version){
+    switch (version) {
+      case "ES5":
+          return "ECMAScript 5";
+      case "ES6":
+          return "ECMAScript 2015";
+      case "ES7":
+          return "ECMAScript 2016";
+      default:
+          return "しらないバージョンです";
+    }
+  }
+  expect(ver("ES5")).toBe("ECMAScript 5");
+  expect(ver("ES6")).toBe("ECMAScript 2015");
+  expect(ver("ES7")).toBe("ECMAScript 2016");
+  expect(ver(3)).toBe("しらないバージョンです");
+})
+test('Switch2 test',()=>{
+  const number = function(num){
+    switch (num % 4) {
+      case 0:
+          return "グー";
+      case 1:
+          return "チョキ";
+      case 2:
+          return "パ";
+      case 3:
+          return "Unknown";
+    }
+  }
+  expect(number(0)).toBe("グー");
+  expect(number(1)).toBe("チョキ");
+  expect(number(2)).toBe("パ");
+  expect(number(3)).toBe("Unknown");
+  expect(number(4)).toBe("グー");
+  expect(number(14)).toBe("パ");
+})
