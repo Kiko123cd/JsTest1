@@ -159,3 +159,16 @@ test("Switch2 test", () => {
   expect(number(4)).toBe("グー");
   expect(number(14)).toBe("パ");
 });
+test("わざと間違え test", () => {
+  const ver = function (version) {
+    if (version === "ES5") {
+      return "ECMAScript 5";
+    } else if (version === "ES6") {
+      return "ECMAScript 2015";
+    } else if (version === "ES7") {
+      return "ECMAScript 2016";
+    }
+    return "unknown";
+  };
+  expect(ver("ES5")).toBe("ECMA");
+});
