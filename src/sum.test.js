@@ -172,4 +172,3 @@ test("わざと間違え test", () => {
   };
   // expect(ver("ES5")).toBe("ECMA");
 });
-// const a = 1;
