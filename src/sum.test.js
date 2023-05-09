@@ -172,3 +172,41 @@ test("わざと間違え test", () => {
   };
   // expect(ver("ES5")).toBe("ECMA");
 });
+test("繰り返し test", () => {
+  function sum(max){
+    let total=0;
+    for(let i=0;i<max;i++){
+      total +=i+1;
+    }
+    return total;
+  }
+  expect(sum(4)).toBe(10);
+  expect(sum(10)).toBe(55);
+});
+test("繰り返し test2", () => {
+  function sum(nums){
+    let total=0;
+    for(let i=0;i<nums.length;i++){
+      total +=nums[i];
+    }
+    return total;
+  }
+  expect(sum([1])).toBe(1);
+  expect(sum([])).toBe(0);
+  expect(sum([1,2,3])).toBe(6);
+});
+test("break test", () => {
+  function IsEvenIncluded(nums){
+    let IsEvenIncluded= false;
+    for(let i=0;i<nums.length;i++){
+      if(nums[i]%2 === 0){
+        IsEvenIncluded=true;
+        break;
+      }
+    }
+    return IsEvenIncluded;
+  }
+  expect(IsEvenIncluded([1])).toBe(false);
+  expect(IsEvenIncluded([])).toBe(false);
+  expect(IsEvenIncluded([1,2,3])).toBe(true);
+});
