@@ -210,3 +210,44 @@ test("break test", () => {
   expect(IsEvenIncluded([])).toBe(false);
   expect(IsEvenIncluded([1, 2, 3])).toBe(true);
 });
+test("some/filter test", () => {
+  const array = [1, 2, 3, 4, 5];
+  const array1 = [1, 3, 5, 7];
+  const array2 = [2, 4, 6, 8];
+  expect(
+    array.some((number) => {
+      return number % 2 === 0;
+    })
+  ).toBe(true);
+  expect(
+    array1.some((number) => {
+      return number % 2 === 0;
+    })
+  ).toBe(false);
+  expect(
+    array2.some((number) => {
+      return number % 2 === 0;
+    })
+  ).toBe(true);
+  expect(
+    array.filter((number) => {
+      return number % 2 === 0;
+    })
+  ).toStrictEqual([2, 4]);
+  expect(
+    array1.filter((number) => {
+      return number % 2 === 0;
+    })
+  ).toStrictEqual([]);
+  expect(
+    array2.filter((number) => {
+      return number % 2 === 0;
+    })
+  ).toStrictEqual([2, 4, 6, 8]);
+  expect(
+    array.filter((number) => {
+      return number % 2 !== 0;
+    })
+  ).toStrictEqual([1, 3, 5]);
+  expect(array.filter((number) => number % 2 !== 0)).toStrictEqual([1, 3, 5]);
+});
