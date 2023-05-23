@@ -251,3 +251,41 @@ test("some/filter test", () => {
   ).toStrictEqual([1, 3, 5]);
   expect(array.filter((number) => number % 2 !== 0)).toStrictEqual([1, 3, 5]);
 });
+
+test("object test", () => {
+  const obj = {};
+  expect(Object.keys(obj)).toStrictEqual([]);
+  const blueGreen = "blue-green";
+  const color = {
+    red: "red",
+    green: "green",
+    blue: "blue",
+    [blueGreen]: "Blue-Green",
+  };
+  expect(Object.keys(color)).toStrictEqual([
+    "red",
+    "green",
+    "blue",
+    "blue-green",
+  ]);
+  expect(Object.keys(color).length).toStrictEqual(4);
+  expect(color.red).toStrictEqual("red");
+  expect(color.green).toStrictEqual("green");
+  expect(color.blue).toStrictEqual("blue");
+
+  // 省略
+  const test = "AAA";
+  const test1 = {
+    test: test,
+  };
+  const test2 = {
+    test,
+  };
+  expect(test1.AAA === test2.AAA).toStrictEqual(true);
+  expect(test1).toStrictEqual(test2);
+
+  color.orange = "orange";
+  expect(color.orange).toStrictEqual("orange");
+  // color["blue-green"] = "blue-green";
+  expect(color["blue-green"]).toStrictEqual("Blue-Green");
+});
