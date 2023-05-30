@@ -289,3 +289,17 @@ test("object test", () => {
   // color["blue-green"] = "blue-green";
   expect(color["blue-green"]).toStrictEqual("Blue-Green");
 });
+test("object test", () => {
+  const obj = {
+    one: 1,
+  };
+  expect(obj.one).toStrictEqual(1);
+  expect(obj.two).toStrictEqual(undefined);
+  expect(Object.hasOwn(obj, "one")).toStrictEqual(true);
+  expect(Object.hasOwn(obj, "two")).toStrictEqual(false);
+  // オブジェクトのkey,valuesの確認
+  expect(Object.keys(obj)).toStrictEqual(["one"]);
+  expect(Object.values(obj)).toStrictEqual([1]);
+  //オブジェクトの"プロパティ名と値の配列"
+  expect(Object.entries(obj)).toStrictEqual([["one", 1]]);
+});
